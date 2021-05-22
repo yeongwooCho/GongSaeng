@@ -21,7 +21,6 @@ struct User: Codable, Equatable {
     mutating func update(id: String, password: String, name: String, dateOfBirth: String, phoneNumber: String, roomNumber: String, belong: String) {
         self.id = id
         self.password = password
-        self.isDone = true
         
         self.name = name
         self.dateOfBirth = dateOfBirth

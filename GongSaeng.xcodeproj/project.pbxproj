@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D015AFF265812B6003EC5E6 /* TermsOfServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D015AFE265812B6003EC5E6 /* TermsOfServices.swift */; };
+		3D40E52E2658086800B19E32 /* TermsOfServices.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D40E52D2658086800B19E32 /* TermsOfServices.storyboard */; };
+		3D40E5302658089600B19E32 /* TermsOfServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D40E52F2658089600B19E32 /* TermsOfServicesViewController.swift */; };
 		3D520BAB265340E40090B6E8 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D520BAA265340E40090B6E8 /* Home.storyboard */; };
 		3D5D5989265247F40018FE63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5D5988265247F40018FE63 /* AppDelegate.swift */; };
 		3D5D598B265247F40018FE63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5D598A265247F40018FE63 /* SceneDelegate.swift */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D015AFE265812B6003EC5E6 /* TermsOfServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServices.swift; sourceTree = "<group>"; };
+		3D40E52D2658086800B19E32 /* TermsOfServices.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsOfServices.storyboard; sourceTree = "<group>"; };
+		3D40E52F2658089600B19E32 /* TermsOfServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServicesViewController.swift; sourceTree = "<group>"; };
 		3D520BAA265340E40090B6E8 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3D5D5985265247F40018FE63 /* GongSaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GongSaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D5D5988265247F40018FE63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +114,9 @@
 			children = (
 				3D5D59A92652B11C0018FE63 /* RegisterViewController.swift */,
 				3D5D59AD2652B2930018FE63 /* Register.storyboard */,
+				3D40E52D2658086800B19E32 /* TermsOfServices.storyboard */,
+				3D40E52F2658089600B19E32 /* TermsOfServicesViewController.swift */,
+				3D015AFE265812B6003EC5E6 /* TermsOfServices.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -177,6 +186,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D40E52E2658086800B19E32 /* TermsOfServices.storyboard in Resources */,
 				3D5D5995265247F50018FE63 /* LaunchScreen.storyboard in Resources */,
 				3D5D5992265247F50018FE63 /* Assets.xcassets in Resources */,
 				3D5D5990265247F40018FE63 /* Main.storyboard in Resources */,
@@ -194,6 +204,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D5D59AC2652B12A0018FE63 /* LoginViewController.swift in Sources */,
+				3D40E5302658089600B19E32 /* TermsOfServicesViewController.swift in Sources */,
+				3D015AFF265812B6003EC5E6 /* TermsOfServices.swift in Sources */,
 				3D5D5989265247F40018FE63 /* AppDelegate.swift in Sources */,
 				3D5D59AA2652B11C0018FE63 /* RegisterViewController.swift in Sources */,
 				3D5D598B265247F40018FE63 /* SceneDelegate.swift in Sources */,
