@@ -16,8 +16,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        idTextField.underlined()
-        passwordTextField.underlined()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        idTextField.underlined(viewSize: view.bounds.width, color: UIColor.systemGray)
+        passwordTextField.underlined(viewSize: view.bounds.width, color: UIColor.systemGray)
     }
     
     @IBAction func back(_ sender: Any) {
@@ -49,27 +53,24 @@ class LoginViewController: UIViewController {
             present(alert, animated: true, completion: nil)
             return
         }
-        
-        
     }
     
     func loginUserCreate(id: String?, password: String?) -> User? {
         guard let idString = id, let passwordString = password else { return nil }
-        var user = User(id: "", password: "", isDone: false, name: "", dateOfBirth: "", phoneNumber: "", roomNumber: "", belong: "")
+        var user = User(id: "", password: "", isDone: false, name: "", dateOfBirth: "", phoneNumber: "", department: "")
         user.loginUserCreate(id: idString, password: passwordString)
         return user
     }
 }
 
 extension UITextField {
-    func underlined(){
+    func underlined(viewSize: CGFloat, color: UIColor){
         let border = CALayer()
-        let width = CGFloat(1.0)
-        border.borderColor = UIColor.gray.cgColor
-//        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width, height: self.frame.size.height)
-        border.frame = CGRect(x: 0, y: self.frame.size.height + 10, width:  self.frame.size.width, height: width)
+        let width = CGFloat(1)
+//        border.borderColor = UIColor.gray.cgColor
+        border.borderColor = color.cgColor
+        border.frame = CGRect(x: 0, y: self.frame.size.height + 10, width: viewSize - 48, height: width)
         border.borderWidth = width
         self.layer.addSublayer(border)
-//        self.layer.masksToBounds = true
     }
 }
