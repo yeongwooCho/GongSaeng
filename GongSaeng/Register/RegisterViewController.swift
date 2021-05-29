@@ -51,8 +51,6 @@ class RegisterViewController: UIViewController {
     
     @IBAction func firstAgreeHandler(_ sender: Any) {
         TermsOfServicesViewModel.firstTermsOfServicesAgree = !firstAgree.isSelected
-//        firstAgree.isSelected = !firstAgree.isSelected
-//        TermsOfServicesViewModel.firstTermsOfServicesAgree = firstAgree.isSelected
         firstAgree.isSelected = TermsOfServicesViewModel.firstTermsOfServicesAgree
         allAgree.isSelected = isAllCheck()
         checkboxClick(button: allAgree)
@@ -63,8 +61,6 @@ class RegisterViewController: UIViewController {
     
     @IBAction func secondAgreeHandler(_ sender: Any) {
         TermsOfServicesViewModel.secondTermsOfServicesAgree = !secondAgree.isSelected
-//        secondAgree.isSelected = !secondAgree.isSelected
-//        TermsOfServicesViewModel.secondTermsOfServicesAgree = secondAgree.isSelected
         secondAgree.isSelected = TermsOfServicesViewModel.secondTermsOfServicesAgree
         allAgree.isSelected = isAllCheck()
         checkboxClick(button: allAgree)
@@ -91,9 +87,9 @@ class RegisterViewController: UIViewController {
     
     @IBAction func nextButtonHandler(_ sender: Any) {
         // 누르면 이동
-//        let sb = UIStoryboard(name: "", bundle: nil)
-//        let vc = sb.instantiateViewController(identifier: <#T##String#>) as! UIViewController
-//        vc.present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        if allAgree.isSelected {
+            performSegue(withIdentifier: "department", sender: nil)
+        }
     }
     
     func checkboxClick(button: UIButton) {
