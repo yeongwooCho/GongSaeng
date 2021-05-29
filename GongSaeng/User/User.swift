@@ -15,18 +15,16 @@ struct User: Codable, Equatable {
     var name: String
     var dateOfBirth: String
     var phoneNumber: String
-    var roomNumber: String
-    var belong: String
+    var department: String
     
-    mutating func update(id: String, password: String, name: String, dateOfBirth: String, phoneNumber: String, roomNumber: String, belong: String) {
+    mutating func update(id: String, password: String, name: String, dateOfBirth: String, phoneNumber: String, department: String) {
         self.id = id
         self.password = password
         
         self.name = name
         self.dateOfBirth = dateOfBirth
         self.phoneNumber = phoneNumber
-        self.roomNumber = roomNumber
-        self.belong = belong
+        self.department = department
     }
     
     mutating func loginUserCreate(id: String, password: String) {
@@ -36,8 +34,17 @@ struct User: Codable, Equatable {
         self.name = ""
         self.dateOfBirth = ""
         self.phoneNumber = ""
-        self.roomNumber = ""
-        self.belong = ""
+        self.department = ""
+    }
+    
+    mutating func registerUserCreate(name: String, dateOfBirth: String, phoneNumber: String, department: String) {
+        self.id = ""
+        self.password = ""
+        
+        self.name = name
+        self.dateOfBirth = dateOfBirth
+        self.phoneNumber = phoneNumber
+        self.department = department
     }
     
     static func == (lhs: Self, rhs: Self) -> Bool {
@@ -49,11 +56,12 @@ class UserManager {
     static let shared = UserManager()
     static var lastId: Int = 0
     
-    var users: [User] = [User(id: "123", password: "qwe", isDone: false, name: "asd", dateOfBirth: "zxc", phoneNumber: "wer", roomNumber: "sdf", belong: "xcv")]
+    //승인되지 않은 유저 테스트용
+    var users: [User] = [User(id: "123", password: "qwe", isDone: false, name: "asd", dateOfBirth: "zxc", phoneNumber: "wer", department: "xcv")]
     
     // 데이터를 생성하고 추가하는 createUser, addUser의 관계를 잘 파악해야 한다.
-    func createUser(id: String, password: String, name: String, dateOfBirth: String, phoneNumber: String, roomNumber: String, belong: String) -> User {
-        return User(id: id, password: password, name: name, dateOfBirth: dateOfBirth, phoneNumber: phoneNumber, roomNumber: roomNumber, belong: belong)
+    func createUser(id: String, password: String, name: String, dateOfBirth: String, phoneNumber: String, department: String) -> User {
+        return User(id: id, password: password, name: name, dateOfBirth: dateOfBirth, phoneNumber: phoneNumber, department: department)
     }
     func addUser(_ user: User) {
         users.append(user)
@@ -70,7 +78,7 @@ class UserManager {
     
     func updateUser(_ user: User) {
         guard let index = users.firstIndex(of: user) else { return }
-        users[index].update(id: user.id, password: user.password, name: user.name, dateOfBirth: user.dateOfBirth, phoneNumber: user.phoneNumber, roomNumber: user.roomNumber, belong: user.belong)
+        users[index].update(id: user.id, password: user.password, name: user.name, dateOfBirth: user.dateOfBirth, phoneNumber: user.phoneNumber, department: user.department)
         saveUser()
     }
     
