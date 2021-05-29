@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D015AFF265812B6003EC5E6 /* TermsOfServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D015AFE265812B6003EC5E6 /* TermsOfServices.swift */; };
+		3D015B0226590F0D003EC5E6 /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D015B0126590F0D003EC5E6 /* DepartmentViewController.swift */; };
 		3D40E52E2658086800B19E32 /* TermsOfServices.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D40E52D2658086800B19E32 /* TermsOfServices.storyboard */; };
 		3D40E5302658089600B19E32 /* TermsOfServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D40E52F2658089600B19E32 /* TermsOfServicesViewController.swift */; };
 		3D520BAB265340E40090B6E8 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D520BAA265340E40090B6E8 /* Home.storyboard */; };
@@ -22,11 +23,16 @@
 		3D5D59AC2652B12A0018FE63 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5D59AB2652B12A0018FE63 /* LoginViewController.swift */; };
 		3D5D59AE2652B2930018FE63 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D5D59AD2652B2930018FE63 /* Register.storyboard */; };
 		3D5D59B02652B29B0018FE63 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D5D59AF2652B29B0018FE63 /* Login.storyboard */; };
+		3D85550B2660083D00147EE7 /* MemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D85550A2660083D00147EE7 /* MemberViewController.swift */; };
+		3D85550D2660084A00147EE7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D85550C2660084A00147EE7 /* AccountViewController.swift */; };
 		3DA98CCD26530C30005175B5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA98CCC26530C30005175B5 /* User.swift */; };
+		3DAFCBA026625DF6008E9803 /* Normalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAFCB9F26625DF6008E9803 /* Normalization.swift */; };
+		3DE755E9265975CE001FE813 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE755E8265975CE001FE813 /* Department.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3D015AFE265812B6003EC5E6 /* TermsOfServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServices.swift; sourceTree = "<group>"; };
+		3D015B0126590F0D003EC5E6 /* DepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentViewController.swift; sourceTree = "<group>"; };
 		3D40E52D2658086800B19E32 /* TermsOfServices.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsOfServices.storyboard; sourceTree = "<group>"; };
 		3D40E52F2658089600B19E32 /* TermsOfServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServicesViewController.swift; sourceTree = "<group>"; };
 		3D520BAA265340E40090B6E8 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -43,7 +49,11 @@
 		3D5D59AB2652B12A0018FE63 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3D5D59AD2652B2930018FE63 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		3D5D59AF2652B29B0018FE63 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		3D85550A2660083D00147EE7 /* MemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewController.swift; sourceTree = "<group>"; };
+		3D85550C2660084A00147EE7 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		3DA98CCC26530C30005175B5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3DAFCB9F26625DF6008E9803 /* Normalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Normalization.swift; sourceTree = "<group>"; };
+		3DE755E8265975CE001FE813 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +86,7 @@
 		3D5D5987265247F40018FE63 /* GongSaeng */ = {
 			isa = PBXGroup;
 			children = (
+				3DAFCB9E26625DDF008E9803 /* Normalization */,
 				3DA98CCB26530C04005175B5 /* User */,
 				3D5D59A62652961B0018FE63 /* Register */,
 				3D5D59A1265295C60018FE63 /* Login */,
@@ -117,6 +128,10 @@
 				3D40E52D2658086800B19E32 /* TermsOfServices.storyboard */,
 				3D40E52F2658089600B19E32 /* TermsOfServicesViewController.swift */,
 				3D015AFE265812B6003EC5E6 /* TermsOfServices.swift */,
+				3D015B0126590F0D003EC5E6 /* DepartmentViewController.swift */,
+				3DE755E8265975CE001FE813 /* Department.swift */,
+				3D85550A2660083D00147EE7 /* MemberViewController.swift */,
+				3D85550C2660084A00147EE7 /* AccountViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -127,6 +142,14 @@
 				3DA98CCC26530C30005175B5 /* User.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		3DAFCB9E26625DDF008E9803 /* Normalization */ = {
+			isa = PBXGroup;
+			children = (
+				3DAFCB9F26625DF6008E9803 /* Normalization.swift */,
+			);
+			path = Normalization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,11 +226,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D85550B2660083D00147EE7 /* MemberViewController.swift in Sources */,
+				3D015B0226590F0D003EC5E6 /* DepartmentViewController.swift in Sources */,
+				3D85550D2660084A00147EE7 /* AccountViewController.swift in Sources */,
 				3D5D59AC2652B12A0018FE63 /* LoginViewController.swift in Sources */,
 				3D40E5302658089600B19E32 /* TermsOfServicesViewController.swift in Sources */,
 				3D015AFF265812B6003EC5E6 /* TermsOfServices.swift in Sources */,
 				3D5D5989265247F40018FE63 /* AppDelegate.swift in Sources */,
 				3D5D59AA2652B11C0018FE63 /* RegisterViewController.swift in Sources */,
+				3DE755E9265975CE001FE813 /* Department.swift in Sources */,
+				3DAFCBA026625DF6008E9803 /* Normalization.swift in Sources */,
 				3D5D598B265247F40018FE63 /* SceneDelegate.swift in Sources */,
 				3DA98CCD26530C30005175B5 /* User.swift in Sources */,
 				3D5D599E265249310018FE63 /* HomeViewController.swift in Sources */,
