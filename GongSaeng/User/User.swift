@@ -11,13 +11,14 @@ struct User: Codable, Equatable {
     var id: String // primary key
     var password: String // Hashing String
     var isDone: Bool = false // 관리자 승인여부
-    
+
     var name: String
     var dateOfBirth: String
     var phoneNumber: String
     var department: String
+    var nickName: String
     
-    mutating func update(id: String, password: String, name: String, dateOfBirth: String, phoneNumber: String, department: String) {
+    mutating func update(id: String, password: String, name: String, dateOfBirth: String, phoneNumber: String, department: String, nickName: String) {
         self.id = id
         self.password = password
         
@@ -25,6 +26,7 @@ struct User: Codable, Equatable {
         self.dateOfBirth = dateOfBirth
         self.phoneNumber = phoneNumber
         self.department = department
+        self.nickName = nickName
     }
     
     mutating func loginUserCreate(id: String, password: String) {
@@ -35,17 +37,21 @@ struct User: Codable, Equatable {
         self.dateOfBirth = ""
         self.phoneNumber = ""
         self.department = ""
+        self.nickName = ""
     }
     
-    mutating func registerUserCreate(name: String, dateOfBirth: String, phoneNumber: String, department: String) {
+    mutating func registerMemberUserCreate(name: String, dateOfBirth: String, phoneNumber: String, department: String) {
         self.id = ""
         self.password = ""
+        self.nickName = ""
         
         self.name = name
         self.dateOfBirth = dateOfBirth
         self.phoneNumber = phoneNumber
         self.department = department
     }
+    
+    
     
     static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.id == rhs.id && lhs.password == rhs.password
@@ -57,11 +63,11 @@ class UserManager {
     static var lastId: Int = 0
     
     //승인되지 않은 유저 테스트용
-    var users: [User] = [User(id: "123", password: "qwe", isDone: false, name: "asd", dateOfBirth: "zxc", phoneNumber: "wer", department: "xcv")]
+    var users: [User] = [User(id: "jyy0223", password: "1234qwer", isDone: false, name: "조영우", dateOfBirth: "19950223", phoneNumber: "01027111995", department: "한국장학재단 부산센터", nickName: "응우")]
     
     // 데이터를 생성하고 추가하는 createUser, addUser의 관계를 잘 파악해야 한다.
-    func createUser(id: String, password: String, name: String, dateOfBirth: String, phoneNumber: String, department: String) -> User {
-        return User(id: id, password: password, name: name, dateOfBirth: dateOfBirth, phoneNumber: phoneNumber, department: department)
+    func createUser(id: String, password: String, name: String, dateOfBirth: String, phoneNumber: String, department: String, nickName: String) -> User {
+        return User(id: id, password: password, name: name, dateOfBirth: dateOfBirth, phoneNumber: phoneNumber, department: department, nickName: nickName)
     }
     func addUser(_ user: User) {
         users.append(user)
@@ -78,7 +84,7 @@ class UserManager {
     
     func updateUser(_ user: User) {
         guard let index = users.firstIndex(of: user) else { return }
-        users[index].update(id: user.id, password: user.password, name: user.name, dateOfBirth: user.dateOfBirth, phoneNumber: user.phoneNumber, department: user.department)
+        users[index].update(id: user.id, password: user.password, name: user.name, dateOfBirth: user.dateOfBirth, phoneNumber: user.phoneNumber, department: user.department, nickName: user.nickName)
         saveUser()
     }
     
@@ -88,6 +94,24 @@ class UserManager {
     
     func retrieveUser() {
         // load user data in Firebase
+    }
+    
+    func idReduplicationCheck(id: String) -> Bool {
+        return isReduplicationCheck(property: "id", checkObject: id)
+    }
+    
+    func nickNameReduplicationCheck(nickName: String) -> Bool {
+        return isReduplicationCheck(property: "nickName", checkObject: nickName)
+    }
+    
+    func isReduplicationCheck(property: String, checkObject: String) -> Bool {
+        var checkedObjects: [User?] = []
+        switch property {
+        case "id": checkedObjects = self.users.filter {  $0.id == checkObject }
+        case "nickName": checkedObjects = self.users.filter { $0.nickName == checkObject }
+        default: return false
+        }
+        return checkedObjects.count != 0
     }
 }
 
@@ -138,6 +162,14 @@ class UserViewModel {
             }
         }
         return false
+    }
+    
+    func idReduplicationCheck(id: String) -> Bool {
+        return manager.idReduplicationCheck(id: id)
+    }
+    
+    func nickNameReduplicationCheck(nickName: String) -> Bool {
+        return manager.nickNameReduplicationCheck(nickName: nickName)
     }
     
     func addUser(_ user: User) {
