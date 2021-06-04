@@ -57,20 +57,8 @@ class LoginViewController: UIViewController {
     
     func loginUserCreate(id: String?, password: String?) -> User? {
         guard let idString = id, let passwordString = password else { return nil }
-        var user = User(id: "", password: "", isDone: false, name: "", dateOfBirth: "", phoneNumber: "", department: "")
+        var user = User(id: "", password: "", isDone: false, name: "", dateOfBirth: "", phoneNumber: "", department: "", nickName: "")
         user.loginUserCreate(id: idString, password: passwordString)
         return user
-    }
-}
-
-extension UITextField {
-    func underlined(viewSize: CGFloat, color: UIColor){
-        let border = CALayer()
-        let width = CGFloat(1)
-//        border.borderColor = UIColor.gray.cgColor
-        border.borderColor = color.cgColor
-        border.frame = CGRect(x: 0, y: self.frame.size.height + 10, width: viewSize - 48, height: width)
-        border.borderWidth = width
-        self.layer.addSublayer(border)
     }
 }
