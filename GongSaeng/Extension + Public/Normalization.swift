@@ -15,9 +15,13 @@ class Normalization {
 
         var regEx: String = ""
         switch regExKinds {
-        case "name": regEx = "[가-힣]{2,10}"
-        case "birth": regEx = "[0-9]{8}"
-        case "phone": regEx = "^010?([0-9]{8})"
+        case "name": regEx = "^[가-힣]{2,10}$"
+        case "birth": regEx = "^[0-9]{8}$"
+        case "phone": regEx = "^010([0-9]{8})$"
+        case "id": regEx = "^[A-Za-z0-9]{4,14}$"
+        case "password": regEx = "^[A-Za-z0-9]{8,22}$"
+//        case "password": regEx = "[A-Za-z0-9!_@$%^&+=]{8,22}"
+        case "nickName": regEx = "^[가-힣]{5,10}$"
         default:
             return false
         }
