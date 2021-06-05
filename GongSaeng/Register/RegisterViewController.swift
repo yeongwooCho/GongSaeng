@@ -109,10 +109,13 @@ class RegisterViewController: UIViewController {
     }
     
     func nextButtonChange() {
-        if allAgree.isSelected {
-            nextButton.imageView?.image = UIImage(named: "nextButtonFill")
-        } else {
-            nextButton.imageView?.image = UIImage(named: "nextButton")
+        DispatchQueue.main.async {
+            if self.allAgree.isSelected {
+                self.nextButton.imageView?.image = UIImage(named: "nextButtonFill")
+            } else {
+                self.nextButton.imageView?.image = UIImage(named: "nextButton")
+            }
         }
+        
     }
 }
