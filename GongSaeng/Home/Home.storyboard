@@ -8,35 +8,120 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
-        <scene sceneID="s0d-6b-0kx">
+        <!--공용-->
+        <scene sceneID="UTt-AA-BaZ">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="HomeViewController" customModule="GongSaeng" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                <viewController id="xhK-am-vmN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b0n-pV-vm3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZS-Ay-yJK">
-                                <rect key="frame" x="189.5" y="429" width="35" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <viewLayoutGuide key="safeArea" id="vcC-RJ-2Vg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="dZS-Ay-yJK" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="I6r-cJ-TW7"/>
-                            <constraint firstItem="dZS-Ay-yJK" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="caC-jx-R9W"/>
-                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="공용" image="public" selectedImage="publicOn" id="5oK-Bx-GfI"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mzp-yX-Ghf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16" y="102"/>
+            <point key="canvasLocation" x="-1674" y="645"/>
+        </scene>
+        <!--커뮤니티-->
+        <scene sceneID="rEi-UK-wgv">
+            <objects>
+                <viewController id="jAw-0d-jUw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6ax-Dj-dLP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="a9Q-bT-YLU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="커뮤니티" image="cummunity" selectedImage="cummunityOn" id="JBx-YZ-Zbr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GFR-dX-AJY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-859" y="645"/>
+        </scene>
+        <!--알림-->
+        <scene sceneID="bJW-Hv-L5a">
+            <objects>
+                <viewController id="AsK-aE-v5d" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xkv-sH-dkc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="O80-27-d9M"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="알림" image="alert" selectedImage="alertOn" id="1Pd-An-VJd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SJZ-ju-DKq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-49" y="645"/>
+        </scene>
+        <!--마이페이지-->
+        <scene sceneID="ZdA-LT-yXD">
+            <objects>
+                <viewController id="831-R5-ggr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wNv-RQ-cuW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Sf1-N3-2wb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="마이페이지" image="mypage" selectedImage="mypageOn" id="Txg-c7-SGd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7W9-mz-zqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749" y="645"/>
+        </scene>
+        <!--홈-->
+        <scene sceneID="mD1-zO-Wod">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="AYN-gc-rdz" customClass="HomeViewController" customModule="GongSaeng" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zQz-5w-4eC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dgB-2I-c1e"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="홈" image="homeIcon" selectedImage="homeIconOn" id="RWe-f8-CGd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AeR-f0-QfX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2493" y="645"/>
+        </scene>
+        <!--App Tabbar Controller-->
+        <scene sceneID="KaK-Rc-ytx">
+            <objects>
+                <tabBarController storyboardIdentifier="AppTabbarController" id="h7Q-wD-ksR" customClass="AppTabbarController" customModule="GongSaeng" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dl0-wd-MWF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="AYN-gc-rdz" kind="relationship" relationship="viewControllers" id="IiA-IY-9EC"/>
+                        <segue destination="xhK-am-vmN" kind="relationship" relationship="viewControllers" id="IYo-En-kFi"/>
+                        <segue destination="jAw-0d-jUw" kind="relationship" relationship="viewControllers" id="fha-Ow-80Z"/>
+                        <segue destination="AsK-aE-v5d" kind="relationship" relationship="viewControllers" id="IoX-8j-yeb"/>
+                        <segue destination="831-R5-ggr" kind="relationship" relationship="viewControllers" id="HHO-4C-NFk"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uaq-SY-JZJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-859" y="-138"/>
         </scene>
     </scenes>
     <resources>
+        <image name="alert" width="23" height="26"/>
+        <image name="alertOn" width="21" height="24"/>
+        <image name="cummunity" width="24" height="24"/>
+        <image name="cummunityOn" width="22" height="22"/>
+        <image name="homeIcon" width="26" height="26"/>
+        <image name="homeIconOn" width="24" height="24"/>
+        <image name="mypage" width="26" height="26"/>
+        <image name="mypageOn" width="22" height="22"/>
+        <image name="public" width="26.5" height="26.5"/>
+        <image name="publicOn" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
