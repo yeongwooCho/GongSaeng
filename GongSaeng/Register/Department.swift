@@ -27,12 +27,12 @@ class DepartmentViewModel {
     var isDoneName: String = ""
     
     var departments: [Department] = [
-        Department(nameOfDepartment: "첫번째", addressOfDepartment: "대구", isDone: false),
-        Department(nameOfDepartment: "두번째", addressOfDepartment: "부산", isDone: false),
-        Department(nameOfDepartment: "3번째", addressOfDepartment: "서울", isDone: false),
-        Department(nameOfDepartment: "4번째", addressOfDepartment: "광주", isDone: false),
-        Department(nameOfDepartment: "5번째", addressOfDepartment: "울산", isDone: false),
-        Department(nameOfDepartment: "6번째", addressOfDepartment: "철원", isDone: false)
+        Department(nameOfDepartment: "한국장학재단 부산센터", addressOfDepartment: "부산광역시 연제구 반송로 60", isDone: false),
+        Department(nameOfDepartment: "한국장학재단 서울센터", addressOfDepartment: "강남?", isDone: false),
+        Department(nameOfDepartment: "한국장학재단 대구센터", addressOfDepartment: "갓대구", isDone: false),
+        Department(nameOfDepartment: "부산대학교 자유관", addressOfDepartment: "새도 앞", isDone: false),
+        Department(nameOfDepartment: "부산대학교 웅비관", addressOfDepartment: "저~ 산꼭대기", isDone: false),
+        Department(nameOfDepartment: "부산대학교 진리관", addressOfDepartment: "저~ 웅비관 옆", isDone: false)
     ]
     
     var searchedDepartments: [Department] = [] // 검색된 결과를 여기에 넣도록 하자.
