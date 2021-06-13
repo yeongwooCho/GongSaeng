@@ -27,10 +27,12 @@ class LoginViewController: UIViewController {
     @IBAction func back(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func tapBG(_ sender: Any) {
         idTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
     }
+    
     @IBAction func loginButtonTapHandler(_ sender: Any) {
         // id, password check
         // 두 유저가 같다는 것은 id와 비번이 모두 같은 것임을 정의했다.
@@ -53,6 +55,13 @@ class LoginViewController: UIViewController {
             present(alert, animated: true, completion: nil)
             return
         }
+        
+        // To Home
+        let sb = UIStoryboard.init(name: "Home", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "AppTabbarController") as AppTabbarController
+        vc.modalPresentationStyle = .fullScreen
+        vc.userIdString = loginUser.id
+        present(vc, animated: true, completion: nil)
     }
     
     func loginUserCreate(id: String?, password: String?) -> User? {
@@ -60,5 +69,20 @@ class LoginViewController: UIViewController {
         var user = User(id: "", password: "", isDone: false, name: "", dateOfBirth: "", phoneNumber: "", department: "", nickName: "")
         user.loginUserCreate(id: idString, password: passwordString)
         return user
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.underlined(viewSize: view.bounds.width, color: UIColor.systemOrange)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.underlined(viewSize: view.bounds.width, color: UIColor.systemGray)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
