@@ -358,6 +358,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="D0y-R1-0Ji"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Tpe-0Z-Bcr" firstAttribute="top" secondItem="S3S-j6-vtT" secondAttribute="top" id="5Zc-2B-aOn"/>
