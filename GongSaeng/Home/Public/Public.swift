@@ -15,16 +15,14 @@ struct Public: Codable, Equatable {
     var finalTime: Int
     var remainingTime: Int
     var usingUser: String
-    var use: Bool
     
-    mutating func update(imgTitle: String, title: String, isDone: Bool, finalTime: Int, remainingTime: Int, usingUser: String, use: Bool) {
+    mutating func update(imgTitle: String, title: String, isDone: Bool, finalTime: Int, remainingTime: Int, usingUser: String) {
         self.imgTitle = imgTitle
         self.title = title
-        self.isDone = isDone
+        self.isDone = isDone // true: using
         self.finalTime = finalTime
         self.remainingTime = remainingTime
         self.usingUser = usingUser
-        self.use = use // true: using
     }
 }
 
@@ -42,18 +40,18 @@ class PublicViewModel {
     }
     
     var publics: [Public] = [
-        Public(imgTitle: "qwer", title: "세탁기1", isDone: true, finalTime: Date().minite, remainingTime: 10, usingUser: "1234", use: false),
-        Public(imgTitle: "asdf", title: "세탁기2", isDone: false, finalTime: Date().minite, remainingTime: 20, usingUser: "1234", use: true),
-        Public(imgTitle: "qwer", title: "세탁기1", isDone: true, finalTime: Date().minite, remainingTime: 10, usingUser: "jyy0223", use: false),
-        Public(imgTitle: "asdf", title: "세탁기2", isDone: false, finalTime: Date().minite, remainingTime: 20, usingUser: "jyy0223", use: true)
+        Public(imgTitle: "qwer", title: "세탁기1사용", isDone: true, finalTime: Date().minite, remainingTime: 10, usingUser: "1234"),
+        Public(imgTitle: "asdf", title: "세탁기2안사요7ㅇ", isDone: false, finalTime: Date().minite, remainingTime: 20, usingUser: "1234"),
+        Public(imgTitle: "qwer", title: "세탁기1사용", isDone: true, finalTime: Date().minite, remainingTime: 10, usingUser: "jyy0223"),
+        Public(imgTitle: "asdf", title: "세탁기2안사용", isDone: false, finalTime: Date().minite, remainingTime: 20, usingUser: "jyy0223")
     ]
     
     var usingPublics: [Public] {
-        return publics.filter { $0.use == true }
+        return publics.filter { $0.isDone == true }
     }
     
     var availablePublics: [Public] {
-        return publics.filter { $0.use == false }
+        return publics.filter { $0.isDone == false }
     }
     
     var numOfSection: Int {
