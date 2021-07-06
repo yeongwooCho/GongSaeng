@@ -9,14 +9,14 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    var userIdString: String = ""
+    var loginUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(userIdString)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.loginUser = LoginUser.loginUser
     }
 }

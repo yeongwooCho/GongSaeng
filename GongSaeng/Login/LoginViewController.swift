@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
         let sb = UIStoryboard.init(name: "Home", bundle: nil)
         let vc = sb.instantiateViewController(identifier: "AppTabbarController") as AppTabbarController
         vc.modalPresentationStyle = .fullScreen
-        vc.userIdString = loginUser.id
+        vc.loginUserString = loginUser.id
         present(vc, animated: true, completion: nil)
     }
     
