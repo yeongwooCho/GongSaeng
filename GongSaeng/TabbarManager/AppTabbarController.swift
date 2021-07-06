@@ -9,8 +9,8 @@ import UIKit
 
 class AppTabbarController: UITabBarController {
 
-    var userIdString: String = ""
-    
+    var loginUserString: String = ""
+    var loginUser: User = User(id: "jyy0223", password: "1234qwer", name: "조영우", dateOfBirth: "19950223", phoneNumber: "01027111995", department: "부산센터", nickName: "하하하하하") // firebase에서 유저id로 부터 User를 들고와야함
     
     override var shouldAutorotate: Bool {
         return false
@@ -22,8 +22,8 @@ class AppTabbarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(userIdString)
-        // Do any additional setup after loading the view.
+        // firebase 들고오는 로직
+        LoginUser.loginUserReplacement(loginUser: self.loginUser)
     }
 }
 
