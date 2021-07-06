@@ -22,7 +22,7 @@ struct Public: Codable, Equatable {
         self.isDone = isDone // true: using
         self.finalTime = finalTime
         self.remainingTime = remainingTime
-        self.usingUser = usingUser
+        self.usingUser = usingUser // id
     }
 }
 
@@ -33,8 +33,8 @@ class PublicViewModel {
         
         var title: String {
             switch self {
-            case .using: return "사용중"
-            default: return "사용하기"
+            case .using: return "사용중" // 내가 사용중 상태
+            default: return "사용하기" // 그 외 상태
             }
         }
     }
@@ -45,14 +45,6 @@ class PublicViewModel {
         Public(imgTitle: "qwer", title: "세탁기1사용", isDone: true, finalTime: Date().minite, remainingTime: 10, usingUser: "jyy0223"),
         Public(imgTitle: "asdf", title: "세탁기2안사용", isDone: false, finalTime: Date().minite, remainingTime: 20, usingUser: "jyy0223")
     ]
-    
-    var usingPublics: [Public] {
-        return publics.filter { $0.isDone == true }
-    }
-    
-    var availablePublics: [Public] {
-        return publics.filter { $0.isDone == false }
-    }
     
     var numOfSection: Int {
         return Section.allCases.count
@@ -68,5 +60,17 @@ class PublicViewModel {
     
     func indexOfPublic(at index: Int) -> Public {
         return publics[index]
+    }
+    
+    func usingPublics(loginUser: User?) -> [Public] {
+        return publics.filter { $0.isDone == true && $0.usingUser == loginUser?.id}
+    }
+    
+    func availablePublics(loginUser: User?) -> [Public] {
+        return publics.filter { !($0.isDone == true && $0.usingUser == loginUser?.id) }
+    }
+    
+    var availablePublics: [Public] {
+        return publics.filter { $0.isDone == false }
     }
 }
