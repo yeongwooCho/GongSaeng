@@ -9,14 +9,12 @@ import UIKit
 
 class ImmediationViewController: UIViewController {
 
+    var loginUser: User? // 로그인 유저
     let viewModel: PublicViewModel = PublicViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    @IBAction func usingButtonHandler(_ sender: Any) {
-    
+        self.loginUser = LoginUser.loginUser
     }
 }
 
@@ -27,9 +25,9 @@ extension ImmediationViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return viewModel.usingPublics.count
+            return viewModel.usingPublics(loginUser: self.loginUser).count
         } else {
-            return viewModel.availablePublics.count
+            return viewModel.availablePublics(loginUser: self.loginUser).count
         }
     }
     
@@ -38,9 +36,9 @@ extension ImmediationViewController: UICollectionViewDataSource {
         
         var item: Public
         if indexPath.section == 0 {
-            item = viewModel.usingPublics[indexPath.item]
+            item = viewModel.usingPublics(loginUser: self.loginUser)[indexPath.item]
         } else {
-            item = viewModel.availablePublics[indexPath.item]
+            item = viewModel.availablePublics(loginUser: self.loginUser)[indexPath.item]
         }
         cell.updateUI(at: item)
         return cell
@@ -65,7 +63,11 @@ extension ImmediationViewController: UICollectionViewDataSource {
 }
 
 extension ImmediationViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+        present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+    }
 }
 
 extension ImmediationViewController: UICollectionViewDelegateFlowLayout {
