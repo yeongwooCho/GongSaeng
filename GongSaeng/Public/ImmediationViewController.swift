@@ -16,6 +16,15 @@ class ImmediationViewController: UIViewController {
         super.viewDidLoad()
         self.loginUser = LoginUser.loginUser
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "checkToUse" {
+            let vc = segue.destination as? EnterUsageTimeViewController
+            if let publicItem = sender as? Public {
+                vc?.selectedPublic = publicItem
+            }
+        }
+    }
 }
 
 extension ImmediationViewController: UICollectionViewDataSource {
@@ -64,9 +73,11 @@ extension ImmediationViewController: UICollectionViewDataSource {
 
 extension ImmediationViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        
-        present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        if indexPath.section == 0 {
+            self.performSegue(withIdentifier: "checkToUse", sender: viewModel.usingPublics(loginUser: self.loginUser)[indexPath.item])
+        } else {
+            self.performSegue(withIdentifier: "checkToUse", sender: viewModel.availablePublics(loginUser: self.loginUser)[indexPath.item])
+        }
     }
 }
 
@@ -82,7 +93,7 @@ class ImmediationCell: UICollectionViewCell {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var isDoneLabel: UILabel!
-    @IBOutlet weak var useingButton: UIButton!
+    @IBOutlet weak var usingLabel: UILabel!
     @IBOutlet weak var finalTimeLabel: UILabel!
     @IBOutlet weak var remainingTimeLabel: UILabel!
 
@@ -91,7 +102,7 @@ class ImmediationCell: UICollectionViewCell {
             self.imgView.image = UIImage(named: "\(index.imgTitle)")
             self.titleLabel.text = index.title
             if index.isDone {
-                self.useingButton.isHidden = true
+                self.usingLabel.isHidden = true
                 self.finalTimeLabel.isHidden = false
                 self.remainingTimeLabel.isHidden = false
 
@@ -101,7 +112,7 @@ class ImmediationCell: UICollectionViewCell {
             } else {
                 self.finalTimeLabel.isHidden = true
                 self.remainingTimeLabel.isHidden = true
-                self.useingButton.isHidden = false
+                self.usingLabel.isHidden = false
 
                 self.isDoneLabel.text = "사용가능"
             }
