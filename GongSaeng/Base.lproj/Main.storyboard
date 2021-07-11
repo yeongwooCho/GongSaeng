@@ -11,7 +11,7 @@
         <!--First View Controller-->
         <scene sceneID="UXh-OV-zAL">
             <objects>
-                <viewController id="m2q-kw-0Os" customClass="FirstViewController" customModule="GongSaeng" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" id="m2q-kw-0Os" customClass="FirstViewController" customModule="GongSaeng" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1lh-Gh-v4w">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
