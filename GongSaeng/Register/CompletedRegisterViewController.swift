@@ -20,7 +20,6 @@ class CompletedRegisterViewController: UIViewController {
         super.viewDidLoad()
         guard let registerUser = user else { return }
         viewModel.addUser(registerUser)
-        print(user)
         prepareAnimation()
     }
     
