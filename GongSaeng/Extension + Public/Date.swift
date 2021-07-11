@@ -13,7 +13,7 @@ extension Date {
         return Calendar.current.component(.hour, from: self)
     }
     
-    public var minite: Int {
+    public var minute: Int {
         return Calendar.current.component(.minute, from: self)
     }
     
