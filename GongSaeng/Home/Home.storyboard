@@ -31,7 +31,6 @@
                                         <state key="normal" title="Button"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <constraints>
                                     <constraint firstItem="TGd-Lw-9MR" firstAttribute="centerY" secondItem="OJM-jT-OQv" secondAttribute="centerY" id="B6Z-z2-zNx"/>
                                     <constraint firstAttribute="height" constant="61" id="EdY-aw-bow"/>
