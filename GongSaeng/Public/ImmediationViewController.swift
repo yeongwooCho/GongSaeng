@@ -15,6 +15,7 @@ class ImmediationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loginUser = LoginUser.loginUser
+        Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(observerTime), userInfo: nil, repeats: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -24,6 +25,12 @@ class ImmediationViewController: UIViewController {
                 vc?.selectedPublic = publicItem
             }
         }
+    }
+}
+
+extension ImmediationViewController {
+    @objc func observerTime() { // 30초마다 실행되는 함수
+        
     }
 }
 
@@ -74,9 +81,12 @@ extension ImmediationViewController: UICollectionViewDataSource {
 extension ImmediationViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            self.performSegue(withIdentifier: "checkToUse", sender: viewModel.usingPublics(loginUser: self.loginUser)[indexPath.item])
+//            self.performSegue(withIdentifier: "checkToUse", sender: viewModel.usingPublics(loginUser: self.loginUser)[indexPath.item])
+            return
         } else {
-            self.performSegue(withIdentifier: "checkToUse", sender: viewModel.availablePublics(loginUser: self.loginUser)[indexPath.item])
+            if viewModel.availablePublics(loginUser: self.loginUser)[indexPath.item].isDone == false { // 사용 가능 section 중 사용 안하는 것
+                self.performSegue(withIdentifier: "checkToUse", sender: viewModel.availablePublics(loginUser: self.loginUser)[indexPath.item])
+            }
         }
     }
 }
