@@ -42,10 +42,10 @@ class PublicViewModel {
     }
     
     var publics: [Public] = [
-        Public(imgTitle: "qwer", title: "세탁기1", isDone: true, finalTime: Date().minite, remainingTime: 10, usingUser: "1234", maxTime: 100),
-        Public(imgTitle: "qwer", title: "세탁기2", isDone: false, finalTime: Date().minite, remainingTime: 20, usingUser: "1234", maxTime: 90),
-        Public(imgTitle: "qwer", title: "세탁기3", isDone: true, finalTime: Date().minite, remainingTime: 30, usingUser: "jyy0223", maxTime: 80),
-        Public(imgTitle: "qwer", title: "세탁기4", isDone: false, finalTime: Date().minite, remainingTime: 40, usingUser: "jyy0223", maxTime: 70)
+        Public(imgTitle: "qwer", title: "세탁기1", isDone: true, finalTime: Date().minute, remainingTime: 10, usingUser: "1234", maxTime: 100),
+        Public(imgTitle: "qwer", title: "세탁기2", isDone: false, finalTime: Date().minute, remainingTime: 20, usingUser: "1234", maxTime: 90),
+        Public(imgTitle: "qwer", title: "세탁기3", isDone: true, finalTime: Date().minute, remainingTime: 30, usingUser: "jyy0223", maxTime: 80),
+        Public(imgTitle: "qwer", title: "세탁기4", isDone: false, finalTime: Date().minute, remainingTime: 40, usingUser: "jyy0223", maxTime: 70)
     ]
     
     var numOfSection: Int {
