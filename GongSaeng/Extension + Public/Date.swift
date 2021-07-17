@@ -42,4 +42,15 @@ extension Date {
         let stringTime: String = dateFormat.string(from: time)
         return stringTime
     }
+    
+    // 시작과 끝 시간을 입력으로 받아 차이를 분으로 반환한다.
+    static func remainingTime(start: String, end: String) -> Int {
+        let dateFormat = self.dateFormatExtension
+        let startDate = dateFormat.date(from: start)!
+        let endDate = dateFormat.date(from: end)!
+        
+        let interval = endDate.timeIntervalSince(startDate)
+        let minutes = Int(interval / 60) // 분단위로 나타낼 것이다.
+        return minutes
+    }
 }
