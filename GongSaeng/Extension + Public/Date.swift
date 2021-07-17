@@ -34,4 +34,12 @@ extension Date {
         let dateFormat = self.dateFormatExtension
         return dateFormat.string(from: Date())
     }
+    
+    // 분을 입력받아 현재시간에 더해 string로 반환한다.
+    static func minuteFromNow(minute: TimeInterval) -> String {
+        let dateFormat = self.dateFormatExtension
+        let time: Date = Self(timeIntervalSinceNow: minute)
+        let stringTime: String = dateFormat.string(from: time)
+        return stringTime
+    }
 }
