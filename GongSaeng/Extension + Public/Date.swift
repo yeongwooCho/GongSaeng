@@ -9,6 +9,14 @@ import Foundation
 
 
 extension Date {
+    private static var dateFormatExtension: DateFormatter {
+        let dateFormat = DateFormatter()
+        dateFormat.locale = Locale(identifier: "ko_kr")
+        dateFormat.timeZone = TimeZone(abbreviation: "KST")
+        dateFormat.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return dateFormat
+    }
+    
     public var hour: Int {
         return Calendar.current.component(.hour, from: self)
     }
@@ -21,4 +29,3 @@ extension Date {
         return Calendar.current.component(.second, from: self)
     }
 }
-
