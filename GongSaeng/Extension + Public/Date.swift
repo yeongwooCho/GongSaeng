@@ -28,4 +28,10 @@ extension Date {
     public var second: Int {
         return Calendar.current.component(.second, from: self)
     }
+    
+    // 현재 시간을 string 로 반환
+    static var currentTime: String {
+        let dateFormat = self.dateFormatExtension
+        return dateFormat.string(from: Date())
+    }
 }
