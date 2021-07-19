@@ -53,6 +53,10 @@ class EnterUsageTimeViewController: UIViewController {
         }
     }
     
+    @IBAction func usingButtonHandler(_ sender: Any) {
+        
+    }
+    
     func updateUI() {
         DispatchQueue.main.async {
             self.itemTitleLabel.text = self.selectedPublic?.title
@@ -76,6 +80,7 @@ class EnterUsageTimeViewController: UIViewController {
 
 extension EnterUsageTimeViewController {
     @objc private func textDidChange(_ notification: Notification) {
+        // 글자수 제한
         if let textField = notification.object as? UITextField {
             if let text = textField.text {
                 let maxLength = "\(self.selectedPublic?.maxTime ?? 10)".count
