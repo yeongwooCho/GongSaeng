@@ -41,6 +41,7 @@
 		3DAFCBA4266261E6008E9803 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAFCBA3266261E6008E9803 /* UITextField.swift */; };
 		3DAFCBA626627256008E9803 /* CompletedRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAFCBA526627256008E9803 /* CompletedRegisterViewController.swift */; };
 		3DB686FA268D8C570061BCB0 /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB686F9268D8C570061BCB0 /* LoginUser.swift */; };
+		3DC069AA2697D5A600A4A6CB /* EnterUsageTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC069A92697D5A600A4A6CB /* EnterUsageTimeViewController.swift */; };
 		3DD893D4266E1A6E0050B4F8 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD893D3266E1A6E0050B4F8 /* NoticeViewController.swift */; };
 		3DD893D6266E1A9C0050B4F8 /* MateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD893D5266E1A9C0050B4F8 /* MateViewController.swift */; };
 		3DE755E9265975CE001FE813 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE755E8265975CE001FE813 /* Department.swift */; };
@@ -86,6 +87,7 @@
 		3DAFCBA3266261E6008E9803 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		3DAFCBA526627256008E9803 /* CompletedRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedRegisterViewController.swift; sourceTree = "<group>"; };
 		3DB686F9268D8C570061BCB0 /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
+		3DC069A92697D5A600A4A6CB /* EnterUsageTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterUsageTimeViewController.swift; sourceTree = "<group>"; };
 		3DD893D3266E1A6E0050B4F8 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		3DD893D5266E1A9C0050B4F8 /* MateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateViewController.swift; sourceTree = "<group>"; };
 		3DE755E8265975CE001FE813 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				3D2FBC082675FEDD00D2FF56 /* Public.swift */,
 				3D2FBC052675FE6B00D2FF56 /* PublicViewController.swift */,
 				3DF5B4CB267A13C8004F1E03 /* ImmediationViewController.swift */,
+				3DC069A92697D5A600A4A6CB /* EnterUsageTimeViewController.swift */,
 				3DF5B4C9267A1396004F1E03 /* ReservationViewController.swift */,
 			);
 			path = Public;
@@ -331,6 +334,7 @@
 				3D231A6A266E629D00080E9B /* MateCell.swift in Sources */,
 				3D231A6C266F71A600080E9B /* MateDetailTableViewController.swift in Sources */,
 				3DAFCBA226626176008E9803 /* UIView.swift in Sources */,
+				3DC069AA2697D5A600A4A6CB /* EnterUsageTimeViewController.swift in Sources */,
 				3D2FBC092675FEDD00D2FF56 /* Public.swift in Sources */,
 				3D00C8B7266E39A6006236A0 /* MateDetailViewController.swift in Sources */,
 				3D5D598B265247F40018FE63 /* SceneDelegate.swift in Sources */,
