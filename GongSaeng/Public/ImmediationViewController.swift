@@ -117,8 +117,14 @@ class ImmediationCell: UICollectionViewCell {
                 self.remainingTimeLabel.isHidden = false
 
                 self.isDoneLabel.text = "사용중"
-                self.finalTimeLabel.text = "\(index.finalTime)분 종료"
-                self.remainingTimeLabel.text = "\(index.remainingTime)분 남음"
+                guard let final = index.finalTime, let remain = index.remainingTime else {
+                    self.finalTimeLabel.text = "종료시간 없음"
+                    self.remainingTimeLabel.text = "남은시간 없음"
+                    return
+                }
+                let strRange = final.index(final.startIndex, offsetBy: 10) ... final.index(final.endIndex, offsetBy: -4)
+                self.finalTimeLabel.text = "\(final[strRange]) 종료" // 사용주이면 사용완료시간은 반드시 존재한다. "yyyy-MM-dd HH:mm:ss"
+                self.remainingTimeLabel.text = "\(remain)분 남음"
             } else {
                 self.finalTimeLabel.isHidden = true
                 self.remainingTimeLabel.isHidden = true
