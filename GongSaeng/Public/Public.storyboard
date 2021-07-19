@@ -297,6 +297,9 @@
                                 <state key="normal" title="사용하기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="usingButtonHandler:" destination="Ld5-h8-qpv" eventType="touchUpInside" id="Su9-45-pFB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2As-ze-qJG"/>
